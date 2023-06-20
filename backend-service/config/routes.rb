@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
+
+  concern :api_v1 do
+    resources :users
+  end
+
   namespace :api do
     namespace :v1 do
-      post 'users/create'
-      get 'users/index'
-      put 'users/update'
-      delete 'users/destroy'
+      concerns :api_v1
     end
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  resources :users, only: [:create, :index, :update, :destroy]
 end
