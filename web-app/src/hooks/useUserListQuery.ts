@@ -5,7 +5,7 @@ import { getUserList } from '../api/userApi';
 
 export const userListQueryKey = 'UserListQuery';
 
-export default function useDeviceListQuery(searchText?: string) {
+export default function useUserListQuery(searchText?: string) {
   return useQuery<UserListResponse, AxiosError>(
     [userListQueryKey, searchText],
     () => getUserList(searchText),

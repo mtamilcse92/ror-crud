@@ -15,9 +15,11 @@ import { Link } from "react-router-dom";
 
 type UserListItemProps = {
   user: UserInfo;
+  deletable?: boolean;
+  creatable?: boolean;
 };
 
-const UserListItem = ({ user }: UserListItemProps) => {
+const UserListItem = ({ user, deletable = true, creatable = true }: UserListItemProps) => {
   const { mutateAsync } = useUserDeleteMutation();
   const handleDelete = () => mutateAsync(user.id);
 
@@ -29,7 +31,7 @@ const UserListItem = ({ user }: UserListItemProps) => {
             </Box>
             <Box display="flex" component={ListItemSecondaryAction} gap={3} justifyContent="space-between">
               <Button color="secondary" variant="text">Total Orders: ( {user.orders.length} )</Button>
-              <Button variant="outlined" href={`/users/${user.id}/orders/create`}>Create Order</Button>
+              {creatable && <Button variant="outlined" href={`/users/${user.id}/orders/create`}>Create Order</Button>}
               <Link to={`/users/${user.id}/edit`}>
                 <IconButton
                   edge="end"
@@ -39,14 +41,14 @@ const UserListItem = ({ user }: UserListItemProps) => {
                   <EditIcon />
                 </IconButton>
               </Link>
-              <IconButton
+             {deletable && <IconButton
                 edge="end"
                 color="error"
                 aria-label="delete"
                 onClick={handleDelete}
               >
                 <DeleteIcon />
-              </IconButton>
+              </IconButton>}
             </Box>
           </ListItem>
       </Card>
