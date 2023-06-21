@@ -9,7 +9,7 @@ import Routes from "./routers/Routers";
 import { Box, Stack } from "@mui/material";
 import Header from "./components/Header";
 
-const Loader = () => (
+export const Loader = () => (
   <Stack height="100vh" justifyContent="center" alignItems="center">
     <CircularProgress />
   </Stack>

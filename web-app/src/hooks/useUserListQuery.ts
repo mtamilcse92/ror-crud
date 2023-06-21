@@ -9,5 +9,8 @@ export default function useDeviceListQuery(searchText?: string) {
   return useQuery<UserListResponse, AxiosError>(
     [userListQueryKey, searchText],
     () => getUserList(searchText),
+    {
+      suspense: false
+    }
   );
 }

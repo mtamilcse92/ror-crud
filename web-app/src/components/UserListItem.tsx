@@ -29,9 +29,7 @@ const UserListItem = ({ user }: UserListItemProps) => {
             </Box>
             <Box display="flex" component={ListItemSecondaryAction} gap={3} justifyContent="space-between">
               <Button color="secondary" variant="text">Total Orders: ( {user.orders.length} )</Button>
-              <Link to={`/users/${user.id}/edit`}>
-                <Button variant="outlined" href={`/users/${user.id}/orders/create`}>Create Order</Button>
-              </Link>
+              <Button variant="outlined" href={`/users/${user.id}/orders/create`}>Create Order</Button>
               <Link to={`/users/${user.id}/edit`}>
                 <IconButton
                   edge="end"
