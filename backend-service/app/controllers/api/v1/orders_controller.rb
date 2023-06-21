@@ -47,6 +47,6 @@ class Api::V1::OrdersController < ApplicationController
   private
 
   def order_payload
-    params.require(:order).permit(:user, :product, :variant, :status, :comment)
+    params.require(:order).permit(:user_id, :product_id, :variant_id, :status, :comment)
   end
 end
