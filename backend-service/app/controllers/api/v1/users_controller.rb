@@ -12,12 +12,7 @@ class Api::V1::UsersController < ApplicationController
 
   #GET /users
   def index
-    if params[:search].blank?
-      @users = User.all
-    else
-      @parmameter = params[:search].downcase
-      @users = User.where('lower(first_name) LIKE :search', search:"%#{@parmameter}%")
-    end
+    @users = User.search(params[:search])
     render json: @users
   end
 
