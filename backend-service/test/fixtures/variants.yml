@@ -5,9 +5,11 @@ one:
   description: MyString
   img_url: MyString
   price: 9.99
+  product: one
 
 two:
   name: MyString
   description: MyString
   img_url: MyString
   price: 9.99
+  product: two

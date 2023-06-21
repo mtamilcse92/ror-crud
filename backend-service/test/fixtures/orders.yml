@@ -4,8 +4,14 @@ one:
   status: MyString
   comment: MyString
   order_code: MyString
+  user: one
+  product: one
+  variant: one
 
 two:
   status: MyString
   comment: MyString
   order_code: MyString
+  user: two
+  product: two
+  variant: two

@@ -1,3 +1,5 @@
 class Order < ApplicationRecord
-    it { should belong_to(:users) } 
+  belongs_to :user
+  belongs_to :product
+  belongs_to :variant
 end

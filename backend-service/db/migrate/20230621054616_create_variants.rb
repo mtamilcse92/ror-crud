@@ -5,6 +5,7 @@ class CreateVariants < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :img_url
       t.decimal :price
+      t.references :product, null: false, foreign_key: true
 
       t.timestamps
     end
