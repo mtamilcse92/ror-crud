@@ -10,7 +10,6 @@ Product.destroy_all
 
 (1..10).each do |id|
     Product.create!(
-        id: id,
         name: Faker::Name.name,
         description: Faker::Quote.jack_handey,
         img_url: Faker::LoremFlickr.image,
@@ -23,7 +22,6 @@ end
 
  (1..10).each do |id|
     Variant.create!(
-         id: id,
          name: Faker::Name.name,
          description: Faker::Quote.jack_handey,
          img_url: Faker::LoremFlickr.image,
