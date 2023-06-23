@@ -149,13 +149,39 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/products/1",
+							"raw": "{{base_url}}/products/35",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"products",
-								"1"
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"description\": \"test description\",\n    \"img_url\": \"\",\n    \"variants_attributes\": [\n        {\n            \"name\": \"test\",\n            \"description\": \"test description\",\n            \"img_url\": \"https://www.shutterstock.com/image-vector/sample-red-square-grunge-stamp-260nw-338250266.jpg\",\n            \"price\": 22.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
 							]
 						}
 					},
