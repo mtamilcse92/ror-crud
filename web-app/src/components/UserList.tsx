@@ -2,7 +2,7 @@ import {
     Box,
   List,
 } from "@mui/material";
-import { UserListResponse, UserInfo } from "../types/users";
+import { UserListResponse } from "../types/users";
 import UserListItem from "./UserListItem";
 
 type UserListProps = {

@@ -2,6 +2,7 @@ import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import UserPage from '../pages/UserPage';
 import CreateUserPage from '../pages/CreateUserPage';
+import OrderListPage from '../pages/OrderListPage';
 import UpdateUserPage from '../pages/UpdateUserPage';
 import CreateOrderPage from '../pages/CreateOrderPage';
 
@@ -9,6 +10,11 @@ const routes = [
   {
     path: '/',
     element: <UserPage />,
+    
+  },
+  {
+    path: '/orders',
+    element: <OrderListPage />,
     
   },
   {

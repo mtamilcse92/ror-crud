@@ -12,7 +12,7 @@ class Api::V1::OrdersController < ApplicationController
 
   # GET /orders
   def index
-    @orders = Order.where(user: request.query_parameters[:user]).all
+    @orders = Order.search(request.query_parameters[:user])
     render json: @orders
   end
 

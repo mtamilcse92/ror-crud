@@ -28,4 +28,32 @@ export interface ProductInfo {
     variants: Variant[]
 }
 
-export interface ProductListResponse extends Array<ProductInfo> {}
+export interface Order {
+    id: number;
+    status: string | null;
+    comment: string | null;
+    order_code: string | null;
+    product: {
+        id: number;
+        name: string;
+        description: string;
+        img_url: string;
+    },
+    variant: {
+        id: number;
+        name: string;
+        description: string;
+        img_url: string;
+        price: string;
+    },
+    user: {
+        id: number;
+        first_name: string;
+        last_name: string;
+        email: string;
+        phone_no: string;
+    }
+}
+
+export interface OrderListResponse extends Array<Order> { }
+export interface ProductListResponse extends Array<ProductInfo> { }

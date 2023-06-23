@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, Stack } from '@mui/material';
-import { Home as HomeIcon, Info as InfoIcon, Mail as MailIcon } from '@mui/icons-material';
+import { AppBar, Toolbar, Typography, Button, Stack } from '@mui/material';
+import { Home as HomeIcon, Info as InfoIcon } from '@mui/icons-material';
 
 const Header = () => {
   return (
@@ -12,7 +12,6 @@ const Header = () => {
         <Stack flexDirection="row" gap={2}>
             <Button href='/' startIcon={<HomeIcon />} color="inherit">Users</Button>
             <Button href='/orders' startIcon={<InfoIcon />} color="inherit">Orders</Button>
-            <Button href='/products' startIcon={<MailIcon />} color="inherit">Contact</Button>
         </Stack>
       </Toolbar>
     </AppBar>

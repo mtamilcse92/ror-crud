@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import useUserDetailQuery from "../hooks/useUserDetailQuery";
 import UserListItem from "../components/UserListItem";
 import { useState } from "react";
-import { OrderPayload, ProductInfo } from "../types/order";
+import { OrderPayload } from "../types/order";
 import useProductListQuery from "../hooks/useProductListQuery";
 import ProductList from "../components/ProductList";
 
