@@ -1,17 +1,18 @@
 class Api::V1::ProductsController < ApplicationController
-  #POST /products
-  def create
-    @product = Product.new(product_payload)
-    if @product.save
-      render json: @product, status: 201
-    else
-      render json: { message: 'Product not saved' }, state: 500
-  end
 
   # GET /products
   def index
     @products = Product.all
     render json: @products
+  end
+
+   #POST /products
+   def create
+    @product = Product.new(product_payload)
+    if @product.save
+      render json: @product, status: 201
+    else
+      render json: { message: 'Product not saved' }, state: 500
   end
 
    #GET /products/:id
