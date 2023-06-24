@@ -33,6 +33,7 @@ export interface Order {
     status: string | null;
     comment: string | null;
     order_code: string | null;
+    created_at: string;
     product: {
         id: number;
         name: string;

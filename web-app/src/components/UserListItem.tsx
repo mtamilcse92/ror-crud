@@ -30,7 +30,7 @@ const UserListItem = ({ user, deletable = true, creatable = true }: UserListItem
             <Box display="flex">
             </Box>
             <Box display="flex" component={ListItemSecondaryAction} gap={3} justifyContent="space-between">
-              <Button color="secondary" variant="text">Total Orders: ( {user.orders.length} )</Button>
+              <Button color="secondary" href={`/users/${user.id}/details`} disabled={user.orders.length === 0} variant="text">Total Orders: ( {user.orders.length} )</Button>
               {creatable && <Button variant="outlined" href={`/users/${user.id}/orders/create`}>Create Order</Button>}
               <Link to={`/users/${user.id}/edit`}>
                 <IconButton

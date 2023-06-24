@@ -5,9 +5,9 @@ import { getOrderList } from '../api/orderApi';
 
 export const productListQueryKey = 'orderListQuery';
 
-export default function useOrderListQuery() {
+export default function useOrderListQuery(id?: string) {
   return useQuery<OrderListResponse, AxiosError>(
-    [productListQueryKey], 
-    getOrderList,
+    [productListQueryKey, id], 
+    () => getOrderList(id),
   );
 }
