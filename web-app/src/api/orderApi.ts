@@ -9,7 +9,7 @@ export const getProductList = async () => {
 
 export const getOrderList = async (id?: string) => {
     const response = await axiosInstance.get<OrderListResponse>(
-        createUrlWithParams({ url: '/orders', params: id && { id } })
+        createUrlWithParams({ url: '/orders', params: id && { user: id } })
         );
     return response.data;
 }
