@@ -3,10 +3,14 @@ class Api::V1::UsersController < ApplicationController
   #POST /users
   def create
     @user = User.new(user_payload)
-    if @user.save
+    if @user.valid?
+      if @user.save
       render json: @user, status: 201
+      else
+        render json: { message: 'User not saved' }, state: 500
+      end
     else
-      render json: { message: 'User not saved' }, state: 500
+      render json: { message: 'Bad request' }, state: 400
     end
   end
 
